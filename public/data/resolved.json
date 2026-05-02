@@ -82,5 +82,25 @@
     ],
     "urls": {},
     "dependencies": []
+  },
+  {
+    "id": "dexscript",
+    "status": "unapproved",
+    "repo": "https://github.com/Caylies/DexScript",
+    "branch": "BD-3.0",
+    "name": "dexscript",
+    "version": "0.5.1",
+    "description": "A DSL package for Ballsdex created by Cayla that allows you to easily perform operations on balls, regimes, specials, etc.",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Cayla",
+        "email": "official.dotzz@gmail.com"
+      }
+    ],
+    "urls": {
+      "Homepage": "https://github.com/Caylies/DexScript"
+    },
+    "dependencies": []
   }
 ]
