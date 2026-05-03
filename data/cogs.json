@@ -26,6 +26,11 @@
       "id": "dexscript",
       "repo": "https://github.com/Caylies/DexScript",
       "branch": "BD-3.0"
+    },
+    {
+      "id": "collect",
+      "repo": "https://github.com/CrashTestAlex/collectibles-ballsdex",
+      "branch": "main"
     }
   ]
 }
