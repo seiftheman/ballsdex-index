@@ -126,7 +126,8 @@
       }
     ],
     "urls": {
-      "Homepage": "https://github.com/Caylies/DexScript"
+      "Homepage": "https://github.com/Caylies/DexScript",
+      "Funding": "https://ko-fi.com/caylies"
     },
     "dependencies": []
   },
