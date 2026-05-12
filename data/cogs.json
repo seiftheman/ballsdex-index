@@ -1,10 +1,15 @@
 {
   "approved": [
-  ],
-  "unapproved": [
     {
       "id": "collector",
       "repo": "https://github.com/flaree/ballsdex-collector",
+      "branch": "master"
+    }
+  ],
+  "unapproved": [
+    {
+      "id": "frames",
+      "repo": "https://github.com/flaree/ballsdex-frames",
       "branch": "master"
     },
     {
