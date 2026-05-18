@@ -51,6 +51,11 @@
       "id": "rarity",
       "repo": "https://github.com/hiboman/BallsDex-Rarity-Pack",
       "branch": "master"
+    },
+    {
+      "id": "bd-fontchanger",
+      "repo": "https://github.com/dormieriancitizen/bd-fontchanger",
+      "branch": "main"
     }
   ]
 }
