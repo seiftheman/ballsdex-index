@@ -213,9 +213,9 @@
     "status": "unapproved",
     "repo": "https://github.com/hiboman/BallsDex-Rarity-Pack",
     "branch": "master",
-    "install_url": "git+https://github.com/hiboman/BallsDex-Rarity-Pack@0.0.2",
+    "install_url": "git+https://github.com/hiboman/BallsDex-Rarity-Pack@0.0.3",
     "name": "rarity",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Rarity package for BallsDex",
     "license": "MIT",
     "authors": [
