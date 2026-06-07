@@ -13,6 +13,11 @@
       "branch": "master"
     },
     {
+      "id": "crafting",
+      "repo": "https://github.com/flaree/ballsdex-crafting",
+      "branch": "master"
+    },
+    {
       "id": "broadcast",
       "repo": "https://github.com/Ray-Hsueh/BallsDex-Broadcast-Pack",
       "branch": "main"
