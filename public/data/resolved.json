@@ -338,5 +338,51 @@
     ],
     "urls": {},
     "dependencies": []
+  },
+  {
+    "id": "hiboman-antifarm",
+    "status": "unapproved",
+    "repo": "https://github.com/MapsDex-Team/BallsDex-AntiFarm-Pack",
+    "branch": "master",
+    "install_url": "git+https://github.com/MapsDex-Team/BallsDex-AntiFarm-Pack@0.0.1",
+    "name": "antifarm",
+    "version": "0.0.1",
+    "description": "AntiFarm package for BallsDex",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "hiboman",
+        "email": "hiboman@proton.me"
+      }
+    ],
+    "urls": {
+      "Repository": "https://github.com/MapsDex-Team/BallsDex-AntiFarm-Pack",
+      "Documentation": "https://github.com/MapsDex-Team/BallsDex-AntiFarm-Pack#readme",
+      "Issues": "https://github.com/MapsDex-Team/BallsDex-AntiFarm-Pack/issues"
+    },
+    "dependencies": []
+  },
+  {
+    "id": "hiboman-battle",
+    "status": "unapproved",
+    "repo": "https://github.com/MapsDex-Team/BallsDex-Battle-Pack",
+    "branch": "master",
+    "install_url": "git+https://github.com/MapsDex-Team/BallsDex-Battle-Pack.git#master",
+    "name": "battle",
+    "version": "0.0.2",
+    "description": "Battle package for BallsDex",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "hiboman",
+        "email": "hiboman@proton.me"
+      }
+    ],
+    "urls": {
+      "Repository": "https://github.com/hiboman/BallsDex-Battle-Pack",
+      "Documentation": "https://github.com/hiboman/BallsDex-Battle-Pack#readme",
+      "Issues": "https://github.com/hiboman/BallsDex-Battle-Pack/issues"
+    },
+    "dependencies": []
   }
 ]
