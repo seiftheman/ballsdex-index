@@ -367,9 +367,9 @@
     "status": "unapproved",
     "repo": "https://github.com/MapsDex-Team/BallsDex-Battle-Pack",
     "branch": "master",
-    "install_url": "git+https://github.com/MapsDex-Team/BallsDex-Battle-Pack.git#master",
+    "install_url": "git+https://github.com/MapsDex-Team/BallsDex-Battle-Pack@0.0.1",
     "name": "battle",
-    "version": "0.0.2",
+    "version": "0.0.1",
     "description": "Battle package for BallsDex",
     "license": "MIT",
     "authors": [
