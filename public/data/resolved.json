@@ -116,7 +116,7 @@
       "Funding": "https://ko-fi.com/caylies"
     },
     "dependencies": [],
-    "stars": 8
+    "stars": 9
   },
   {
     "id": "v2-completion",
@@ -164,7 +164,7 @@
       "Issues": "https://github.com/MapsDex-Team/BallsDex-Rarity-Pack/issues"
     },
     "dependencies": [],
-    "stars": 0
+    "stars": 1
   },
   {
     "id": "bd-fontchanger",
@@ -210,7 +210,7 @@
       "Issues": "https://github.com/MapsDex-Team/BallsDex-Leaderboard-Pack/issues"
     },
     "dependencies": [],
-    "stars": 0
+    "stars": 1
   },
   {
     "id": "re-collection",
@@ -254,7 +254,7 @@
       "Issues": "https://github.com/MapsDex-Team/BallsDex-AntiFarm-Pack/issues"
     },
     "dependencies": [],
-    "stars": 0
+    "stars": 1
   },
   {
     "id": "hiboman-battle",
@@ -278,7 +278,7 @@
       "Issues": "https://github.com/hiboman/BallsDex-Battle-Pack/issues"
     },
     "dependencies": [],
-    "stars": 0
+    "stars": 1
   },
   {
     "id": "SpecialBonuses",
