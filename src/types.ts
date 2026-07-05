@@ -10,9 +10,11 @@ export interface Cog {
   status: CogStatus;
   repo: string;
   branch: string;
+  subdirectory?: string;
   install_url?: string;
   name?: string;
   version?: string;
+  stars?: number;
   description?: string;
   license?: string | { text: string };
   authors?: (string | CogAuthor)[];

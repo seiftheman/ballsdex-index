@@ -102,6 +102,20 @@ function RepoIcon() {
   );
 }
 
+function StarIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+      fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </svg>
+  );
+}
+
+function formatStars(stars: number): string {
+  if (stars >= 1000) return `${(stars / 1000).toFixed(stars % 1000 >= 100 ? 1 : 0)}k`;
+  return String(stars);
+}
+
 // ── Card ─────────────────────────────────────────────────────────────────────
 
 export function PackageCard({ cog }: { cog: Cog }) {
@@ -129,11 +143,19 @@ export function PackageCard({ cog }: { cog: Cog }) {
           <h3 className="truncate font-semibold text-white">
             {cog.name ?? cog.id}
           </h3>
-          {cog.version && (
-            <span className="mt-0.5 inline-block rounded-full border border-emerald-800/60 bg-emerald-950/60 px-2 font-mono text-xs text-emerald-400">
-              v{cog.version}
-            </span>
-          )}
+          <div className="mt-0.5 flex flex-wrap items-center gap-1.5">
+            {cog.version && (
+              <span className="inline-block rounded-full border border-emerald-800/60 bg-emerald-950/60 px-2 font-mono text-xs text-emerald-400">
+                v{cog.version}
+              </span>
+            )}
+            {typeof cog.stars === 'number' && (
+              <span className="inline-flex items-center gap-1 rounded-full border border-amber-800/60 bg-amber-950/40 px-2 font-mono text-xs text-amber-400">
+                <StarIcon />
+                {formatStars(cog.stars)}
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Icon links */}

@@ -43,11 +43,12 @@ def main() -> None:
                 continue
             repo_url = entry["repo"]
             branch = entry.get("branch", "main")
+            subdirectory = entry.get("subdirectory")
             cog_id = entry["id"]
             print(f"Checking [{status}] {cog_id} ({repo_url}@{branch}) ...")
 
             with tempfile.TemporaryDirectory() as tmpdir:
-                metadata = clone_and_read(repo_url, branch, tmpdir)
+                metadata = clone_and_read(repo_url, branch, tmpdir, subdirectory)
 
             version = (metadata or {}).get("version", "")
             release_ref = get_release_ref(repo_url, version) if version else None

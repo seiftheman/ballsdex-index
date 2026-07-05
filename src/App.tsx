@@ -28,6 +28,40 @@ function SearchIcon() {
   );
 }
 
+// ── Sorting ──────────────────────────────────────────────────────────────────
+
+type SortOption = 'default' | 'stars' | 'alphabetical' | 'creator';
+
+const SORT_OPTIONS: { value: SortOption; label: string }[] = [
+  { value: 'default', label: 'Default' },
+  { value: 'stars', label: 'Stars' },
+  { value: 'alphabetical', label: 'Alphabetical' },
+  { value: 'creator', label: 'Creator' },
+];
+
+function getCreatorName(cog: Cog): string {
+  const first = cog.authors?.[0];
+  if (!first) return '';
+  return typeof first === 'string' ? first : first.name;
+}
+
+function sortCogs(cogs: Cog[], sortBy: SortOption): Cog[] {
+  if (sortBy === 'default') return cogs;
+  const sorted = [...cogs];
+  switch (sortBy) {
+    case 'stars':
+      sorted.sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0));
+      break;
+    case 'alphabetical':
+      sorted.sort((a, b) => (a.name ?? a.id).localeCompare(b.name ?? b.id));
+      break;
+    case 'creator':
+      sorted.sort((a, b) => getCreatorName(a).localeCompare(getCreatorName(b)));
+      break;
+  }
+  return sorted;
+}
+
 // ── Small helpers ────────────────────────────────────────────────────────────
 
 function SectionHeader({
@@ -88,6 +122,7 @@ export default function App() {
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState<Page>('index');
+  const [sortBy, setSortBy] = useState<SortOption>('default');
 
   useEffect(() => {
     fetch('/data/resolved.json')
@@ -116,8 +151,8 @@ export default function App() {
     );
   }, [cogs, query]);
 
-  const approved = filtered.filter(c => c.status === 'approved');
-  const unapproved = filtered.filter(c => c.status === 'unapproved');
+  const approved = sortCogs(filtered.filter(c => c.status === 'approved'), sortBy);
+  const unapproved = sortCogs(filtered.filter(c => c.status === 'unapproved'), sortBy);
   const hasUnapproved = cogs.some(c => c.status === 'unapproved');
 
   return (
@@ -170,8 +205,8 @@ export default function App() {
           </nav>
 
           {page === 'index' && (
-            <div className="ml-auto w-full max-w-xs">
-              <label className="relative flex items-center">
+            <div className="ml-auto flex w-full max-w-xl items-center gap-2">
+              <label className="relative flex flex-1 items-center">
                 <span className="pointer-events-none absolute left-3 text-zinc-500">
                   <SearchIcon />
                 </span>
@@ -183,6 +218,18 @@ export default function App() {
                   className="w-full rounded-lg border border-zinc-700 bg-[#1c1c1c] py-2 pl-9 pr-3 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-500"
                 />
               </label>
+              <select
+                value={sortBy}
+                onChange={e => setSortBy(e.target.value as SortOption)}
+                aria-label="Sort packages"
+                className="shrink-0 rounded-lg border border-zinc-700 bg-[#1c1c1c] py-2 pl-2.5 pr-7 text-sm text-zinc-100 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-500"
+              >
+                {SORT_OPTIONS.map(opt => (
+                  <option key={opt.value} value={opt.value}>
+                    Sort: {opt.label}
+                  </option>
+                ))}
+              </select>
             </div>
           )}
         </div>

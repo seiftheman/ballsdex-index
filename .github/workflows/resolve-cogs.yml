@@ -35,6 +35,8 @@ jobs:
         run: pip install tomli
 
       - name: Run resolve script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/resolve_cogs.py
 
       - name: Commit updated resolved.json
